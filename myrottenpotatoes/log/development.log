@@ -899,3 +899,28 @@ SyntaxError (/mnt/c/Users/ANGELLO/Desktop/DesarrolloDeSoftware/Semana7/myrottenp
 app/models/movie.rb:25: syntax error, unexpected end-of-input, expecting `end'
 app/models/movie.rb:25: syntax error, unexpected end-of-input, expecting `end'
 app/controllers/movies_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-11-13 12:34:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/movies" for 127.0.0.1 at 2023-11-13 12:34:15 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (8.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered movies/index.html.haml within layouts/application (Duration: 89.5ms | Allocations: 32401)
+  Rendered layout layouts/application.html.haml (Duration: 2429.3ms | Allocations: 127993)
+Completed 200 OK in 2625ms (Views: 2435.5ms | ActiveRecord: 20.1ms | Allocations: 136131)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2023-11-13 12:34:23 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (4.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/show.html.haml within layouts/application
+  Rendered movies/show.html.haml within layouts/application (Duration: 23.5ms | Allocations: 4942)
+  Rendered layout layouts/application.html.haml (Duration: 129.7ms | Allocations: 7415)
+Completed 200 OK in 181ms (Views: 132.1ms | ActiveRecord: 4.1ms | Allocations: 9891)
+
+
